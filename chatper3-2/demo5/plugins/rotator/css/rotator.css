@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#pics {
+    width: 570px;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    margin: 1px auto;
+}
+
+/*
+轮播顶级容器样式
+ */
+ul, li, ol, dl {
+    list-style: none;
+}
+
+.rotator {
+    background-repeat: round;
+}
+
+.container {
+    width: 400px;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -200px;
+    text-align: center;
+}
+
+/*
+抽奖系统相关样式
+ */
+.awards {
+    font-size: 24px;
+    text-align: center;
+}
+
+select.lottery {
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    border: none;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.result-box {
+    background-color: #fff;
+    text-align: center;
+    line-height: 60px;
+    font-size: 34px;
+    border: 1px solid darkblue;
+}
+
+button.lottery {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 30px;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+button.lottery:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+.start {
+    background-color: #428bca;
+}
+
+.end {
+    background-color: #d9534f;
+}
+
+
+/*
+图片轮播相关样式
+ */
+.rotator img {
+    border: 0;
+    width: 100%;
+}
+
+.rotator ul {
+    overflow: hidden;
+}
+
+.rotator ul li {
+    overflow: hidden;
+}
+
+.rotator ul > li:not(:first-child) {
+    display: none;
+    opacity: 0;
+}
+
+.rotator .number {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 200;
+}
+
+
+.rotator .number > span {
+    color: #03F;
+    font-size: 14px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    background: url("../img/yuan2.gif") no-repeat;
+}
+
+.rotator .number > span.on {
+    color: #fff;
+    background: url("../img/yuan.gif") no-repeat;
+}
