@@ -97,3 +97,16 @@ HTMLCollection.prototype.hide = NodeList.prototype.hide = function () {
     }
 };
 
+/**
+ * 取消所有的事件监听器
+ */
+HTMLElement.prototype.unbindAll = function () {
+    var html = this.innerHTML;
+
+    // 浅克隆会去掉所有动态注册的事件监听器
+    var cloneNode = this.cloneNode();
+    // 浅克隆不会复制子节点（包括文本节点），所以需要人为复制子节点
+    cloneNode.innerHTML = html;
+    this.parentElement.replaceChild(cloneNode, this);
+    return cloneNode;
+};

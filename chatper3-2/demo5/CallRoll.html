@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rotator</title>
+    <title>CallRoll</title>
     <script src="plugins/rotator/util.js"></script>
-    <script src="plugins/rotator/Rotator.js"></script>
+    <script src="plugins/rotator/Lottery.js"></script>
     <script type="text/javascript">
         window.onload = function () {
             var urls = [];
-            for (var i = 1; i <= 5; i++) {
-                urls.push('./images/slide-'.concat(i, ".jpg"));
+            for (var i = 1; i <= 100; i++) {
+                urls.push(randRange(100000000, 199999999));
             }
-            var rotator = new Rotator(urls, true, false);
-            rotator.start();
+
+            var rotator = new CallRoll(urls, function (student) {
+                console.log(student);
+            }, false);
+
         };
     </script>
 </head>
 <body>
-<div id="pics" class="rotator"></div>
+<div class="container rotator"></div>
 
 </body>
 </html>
